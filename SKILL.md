@@ -60,6 +60,28 @@ curl --version
 
 ## Workflow
 
+
+### Step 1 — Create Privy Wallet with Policy
+
+Create a Privy policy capping transactions at 0.001 ETH, restricted to
+World Chain mainnet (chain ID `480`) and Base mainnet (chain ID `8453`),
+then create a wallet with the policy attached:
+
+```bash
+bash scripts/create_privy_wallet.sh
+```
+
+The script prints JSON to stdout:
+```json
+{"wallet_id":"<id>","agent_address":"0x...","policy_id":"<id>"}
+```
+
+Save the `agent_address` for Steps 2 and 3.
+
+---
+
+or
+
 ### Step 1 — Generate Agent Key Pair
 
 Install dependencies and generate the key pair from the `app/` directory:
