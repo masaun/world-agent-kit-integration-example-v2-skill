@@ -58,6 +58,24 @@ curl --version
 
 ---
 
+## Usage by Platform
+
+### Hermes Agent
+Add the skill to your project:
+```bash
+git clone https://github.com/masaun/world-agent-kit-integration-example-v2-skill.git ~/.hermes/skills/
+```
+
+### OpenClaw
+Install into your workspace skills folder:
+```bash
+# Clone directly
+git clone https://github.com/masaun/world-agent-kit-integration-example-v2-skill.git ~/.openclaw/workspace/skills/
+```
+
+
+---
+
 ## Workflow
 
 
@@ -104,7 +122,7 @@ Save the `wallet_address` for Steps 2 and 3.
 
 ---
 
-### Step 2 — Register Agent with WorldCoin AgentKit
+### Step 2 — Register Agent with World AgentKit
 
 Register the wallet address obtained in Step 1:
 
@@ -117,7 +135,25 @@ This runs:
 bunx @worldcoin/agentkit-cli register <wallet-address>
 ```
 
-The agent is now registered in the AgentBook contract on World Chain mainnet.
+Display the QR code image in the `Messaging platforms` after the agentkit-cli register command produces the World App verification link.
+
+What I did:
+- Ran the registration command
+- Captured the verification URL it printed
+- Generated a QR code image from that URL
+- Checked the QR image visually to confirm it’s clear and scannable
+
+The QR code image was saved here:
+`/tmp/worldcoin-agentkit-verify.png`
+
+Scan the QR code with the World App to complete verification. This proves ownership of the wallet address and links it to a human identity in the World system.
+
+Once the verification is complete, the agent is now registered in the AgentBook contract on World Chain mainnet.
+
+Once the agent is registered, the QR code image saved should be deleted automatically by the following script:
+```bash
+rm /tmp/worldcoin-agentkit-verify.png
+```
 
 ---
 
