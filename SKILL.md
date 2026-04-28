@@ -58,6 +58,24 @@ curl --version
 
 ---
 
+## Usage by Platform
+
+### Hermes Agent
+Add the skill to your project:
+```bash
+git clone https://github.com/masaun/world-agent-kit-integration-example-v2-skill.git ~/.hermes/skills/
+```
+
+### OpenClaw
+Install into your workspace skills folder:
+```bash
+# Clone directly
+git clone https://github.com/masaun/world-agent-kit-integration-example-v2-skill.git ~/.openclaw/workspace/skills/
+```
+
+
+---
+
 ## Workflow
 
 
