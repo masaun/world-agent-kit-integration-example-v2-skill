@@ -126,11 +126,16 @@ What I did:
 - Checked the QR image visually to confirm it’s clear and scannable
 
 The QR code image was saved here:
-/tmp/worldcoin-agentkit-verify.png
+`/tmp/worldcoin-agentkit-verify.png`
 
 Scan the QR code with the World App to complete verification. This proves ownership of the wallet address and links it to a human identity in the World system.
 
 Once the verification is complete, the agent is now registered in the AgentBook contract on World Chain mainnet.
+
+Once the agent is registered, the QR code image saved should be deleted automatically by the following script:
+```bash
+rm /tmp/worldcoin-agentkit-verify.png
+```
 
 ---
 
