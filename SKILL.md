@@ -124,6 +124,8 @@ Save the `wallet_address` for Steps 2 and 3.
 
 ### Step 2 — Register Agent with World AgentKit
 
+At first, asking the user for which <wallet-address> the user wants to register. This should be the `agent_address` from Step 1 if using the Privy wallet flow.
+
 Register the wallet address obtained in Step 1:
 
 ```bash
@@ -132,7 +134,7 @@ bash scripts/register_worldchain_agent.sh "<wallet-address>"
 
 This runs:
 ```bash
-bunx @worldcoin/agentkit-cli register <wallet-address>
+npx @worldcoin/agentkit-cli register <wallet-address>
 ```
 
 Display the QR code image in the `Messaging platforms` after the agentkit-cli register command produces the World App verification link.
@@ -180,7 +182,10 @@ The API calls `lookupHuman(address)` on the AgentBook contract — if the agent 
 not registered it returns `403 Forbidden`. On success it returns the newly created
 community as JSON and persists it to Supabase.
 
-Set `API_BASE_URL` if not targeting `http://localhost:3000` (the default):
+#### API Base URL
+Read `API_BASE_URL` from `~/.hermes/.env` if available - if Hernes Agent.
+
+Or, Set `API_BASE_URL` if not targeting `http://localhost:3000` (the default):
 ```bash
 export API_BASE_URL=https://your-deployment.vercel.app
 bash scripts/create_demo_community.sh "<wallet-address>"
